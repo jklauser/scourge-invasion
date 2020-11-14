@@ -2,7 +2,7 @@ const tuning = 60;
 
 const init = {
 	rare: 174062,
-	timer: "2020-11-12T03:20:00Z"
+	timer: "2020-11-11T22:00:00Z"
 }
 
 var rares = [
