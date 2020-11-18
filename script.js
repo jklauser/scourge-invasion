@@ -2,7 +2,7 @@ const tuning = 60;
 
 const init = {
 	rare: 174062,
-	timer: "2020-11-11T22:00:00Z"
+	timer: "2020-11-11T21:10:00Z"
 }
 
 var rares = [
@@ -806,7 +806,7 @@ function nextSpawn(rare)
 	var currentDate = new moment();
 
 	while (spawnTimer < currentDate) {
-		spawnTimer.add(400, 'minutes');
+		spawnTimer.add(200, 'minutes');
 	}
 
 	rare.nextSpawnMins = moment.duration(spawnTimer.diff(currentDate)).asMinutes();
@@ -815,7 +815,7 @@ function nextSpawn(rare)
 		next: `Spawns in ${moment.duration(spawnTimer.diff(currentDate)).humanize()} (${spawnTimer.format("HH:mm")} local time)`
 	};
 
-	spawnTimer.add(400, 'minutes');
+	spawnTimer.add(200, 'minutes');
 
 	rare.spawn.subsequent = `Next spawn in ${moment.duration(spawnTimer.diff(currentDate)).humanize()} (${spawnTimer.format("HH:mm")} local time)`;
 
@@ -884,7 +884,7 @@ $(function() {
 
 	rares.forEach((rare, index) => {
 		const rareTimer = initTimer.clone();
-		rareTimer.add((index - initIndex) * 20, 'minutes');
+		rareTimer.add((index - initIndex) * 10, 'minutes');
 
 		rare.timer = rareTimer.toISOString();
 		rare.img = `${document.URL.replace('#', '')}${rare.img}`;
